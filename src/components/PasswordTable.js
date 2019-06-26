@@ -147,12 +147,12 @@ function CustomizedTables({ search, ...props }) {
   const listeningFirestore = () => {
     let tmp = [];
 
-    db
+    const passwords = db
       .collection('passwords')
       .orderBy('updatedAt', 'desc')
       .onSnapshot((querySnapshot) => {
           tmp = [...rows];
-          
+
           // console.log('data changed');
           querySnapshot.forEach((doc) => {
             tmp.push({ ...doc.data(), id: doc.id });
@@ -160,10 +160,14 @@ function CustomizedTables({ search, ...props }) {
           setOriRows(tmp);
           setRows(tmp);
         });
+    return passwords
   }
 
   useEffect(() => {
-    listeningFirestore();
+    const listen = listeningFirestore();
+    return () => {
+     listen()
+    }
   // eslint-disable-next-line
   },[])
 
@@ -247,7 +251,7 @@ const mapStateToProps = ({ search }) => ({
 })
 
 const mapDispatchToProps = {
-  
+
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CustomizedTables);
