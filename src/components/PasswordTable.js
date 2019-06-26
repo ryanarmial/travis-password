@@ -147,27 +147,27 @@ function CustomizedTables({ search, ...props }) {
   const listeningFirestore = () => {
     let tmp = [];
 
-    const passwords = db
-      .collection('passwords')
-      .orderBy('updatedAt', 'desc')
-      .onSnapshot((querySnapshot) => {
-          tmp = [...rows];
+    // const passwords = db
+    //   .collection('passwords')
+    //   .orderBy('updatedAt', 'desc')
+    //   .onSnapshot((querySnapshot) => {
+    //       tmp = [...rows];
 
-          // console.log('data changed');
-          querySnapshot.forEach((doc) => {
-            tmp.push({ ...doc.data(), id: doc.id });
-          })
-          setOriRows(tmp);
-          setRows(tmp);
-        });
-    return passwords
+    //       // console.log('data changed');
+    //       querySnapshot.forEach((doc) => {
+    //         tmp.push({ ...doc.data(), id: doc.id });
+    //       })
+    //       setOriRows(tmp);
+    //       setRows(tmp);
+    //     });
+    // return passwords
   }
 
   useEffect(() => {
     const listen = listeningFirestore();
-    return () => {
-     listen()
-    }
+    // return () => {
+    //  listen()
+    // }
   // eslint-disable-next-line
   },[])
 

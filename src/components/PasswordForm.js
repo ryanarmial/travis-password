@@ -53,19 +53,19 @@ function PasswordForm({ currentEditing, set_editing, ...props }) {
       if (currentEditing.id) {
         const updatedAt = Date();
 
-        db
-          .collection('passwords')
-          .doc(currentEditing.id)
-          .set({
-            url, username, password, updatedAt
-          }, { merge: true })
-          .then(docRef => {
-            // console.log('updated ---------');
-            // console.log(docRef);
-          })
-          .catch(err => {
-            // console.log(err);
-          })
+        // db
+        //   .collection('passwords')
+        //   .doc(currentEditing.id)
+        //   .set({
+        //     url, username, password, updatedAt
+        //   }, { merge: true })
+        //   .then(docRef => {
+        //     // console.log('updated ---------');
+        //     // console.log(docRef);
+        //   })
+        //   .catch(err => {
+        //     // console.log(err);
+        //   })
       } else {
         const createdAt = Date();
         const updatedAt = Date();
