@@ -79,9 +79,9 @@ function SearchForm({ set_search, ...props }) {
           <div className={classes.searchIcon}>
             <SearchIcon />
           </div>
-          <form data-testid="search-form" onSubmit={handleSubmitSearch}>
+          <form data-testid="search-foorm" onSubmit={handleSubmitSearch}>
             <InputBase
-              data-testid="search-input"
+              data-testid="search-inpuut"
               placeholder="Search Password"
               classes={{
                 root: classes.inputRoot,
@@ -106,7 +106,7 @@ function SearchForm({ set_search, ...props }) {
 }
 
 const mapStateToProps = (state) => ({
-  
+
 })
 
 const mapDispatchToProps = {

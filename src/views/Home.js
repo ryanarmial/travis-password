@@ -7,6 +7,7 @@ export default class Home extends Component {
   render() {
     return (
       <Grid container>
+        <h1>HALO saya ingin merusak</h1>
         <Grid container alignItems="center" item sm={3} style={{ height: "100vh", overflow: "auto", backgroundPosition: "right", backgroundImage: "url('https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fd-zKJCKsoWw%2Fmaxresdefault.jpg&f=1')" }}>
           <Container>
             <PasswordForm />
