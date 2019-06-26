@@ -65,15 +65,15 @@ function PasswordRow({ row, set_editing, ...props }) {
   }
   const handleDeletePassword = () => {
     setShowConfirmation(!showConfirmation);
-    db
-      .collection('passwords')
-      .doc(row.id)
-      .delete()
-      .then(() => {
-      }) 
-      .catch(err => {
-        // console.log(err);
-      })
+    // db
+    //   .collection('passwords')
+    //   .doc(row.id)
+    //   .delete()
+    //   .then(() => {
+    //   })
+    //   .catch(err => {
+    //     // console.log(err);
+    //   })
   }
   const handleEditing = () => {
     set_editing(row);
@@ -159,7 +159,7 @@ function PasswordRow({ row, set_editing, ...props }) {
 }
 
 const mapStateToProps = (state) => ({
-  
+
 })
 
 const mapDispatchToProps = {

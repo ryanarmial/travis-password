@@ -44,9 +44,9 @@ function PasswordForm({ currentEditing, set_editing, ...props }) {
     e.preventDefault();
     if (!passwordError) {
       const { url, username, password } = values;
-      
+
       handleCloseEditing();
-      setShowWidget(false);   
+      setShowWidget(false);
       // console.log({
       //   url, username, password, createdAt, updatedAt, showPassword
       // })
@@ -70,18 +70,18 @@ function PasswordForm({ currentEditing, set_editing, ...props }) {
         const createdAt = Date();
         const updatedAt = Date();
 
-        db
-          .collection('passwords')
-          .add({
-            url, username, password, createdAt, updatedAt
-          })
-          .then(docRef => {
-            // console.log('added ---------');
-            // console.log(docRef);
-          })
-          .catch(err => {
-            // console.log(err);
-          })
+        // db
+        //   .collection('passwords')
+        //   .add({
+        //     url, username, password, createdAt, updatedAt
+        //   })
+        //   .then(docRef => {
+        //     // console.log('added ---------');
+        //     // console.log(docRef);
+        //   })
+        //   .catch(err => {
+        //     // console.log(err);
+        //   })
       }
     } else {
       document.getElementById("password").focus();
@@ -139,7 +139,7 @@ function PasswordForm({ currentEditing, set_editing, ...props }) {
                   <CloseIcon />
                 </IconButton>
               </Collapse>
-            </Grid>         
+            </Grid>
             <Grid container justify="center">
               <FormControl className={clsx(classes.margin, classes.textField)}>
                 <InputLabel required htmlFor="URL">URL</InputLabel>
